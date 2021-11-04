@@ -1,0 +1,43 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Chefs>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+}
+
+<div>
+            <div class="rubrik">
+                <h1>Våra Kockar</h1>
+            </div>
+        <div class="grid-item" id="kock">
+
+        
+            
+@{
+	var chefs = Umbraco.Content(2092)
+    .ChildrenOfType("chef")
+    .Where(x => x.IsVisible())
+    .OrderBy(x => x.Name);
+}
+
+	@foreach (var chef in chefs)
+	{
+	    <div class="kock-col">
+        <div class="kock-img-col">
+            @{
+                var image = chef.Value<IPublishedContent>("chefImage");
+            }
+	    <img class="img-rec-kock" src="@image.Url()">
+        </div>
+        <h3>@chef.Value("chefName")</h3>
+        <p>@chef.Value("jobTitle")</p>
+        <p>@chef.Value("chefDescription")</p>
+        </div>
+	
+	
+	
+
+        }
+
+</div>
+</div>

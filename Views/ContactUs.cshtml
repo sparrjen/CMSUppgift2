@@ -1,0 +1,45 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ContactUs>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+}
+
+ <section class="contact-us">
+                <div class="row">
+                        <h1>Kontakta Oss</h1>
+                    <div class="contact-col">
+                        <form action="form-handler.php" method="POST">
+                            <input type="text" name="name" placeholder="Namn" required>
+                            <input type="email" name="email" placeholder="E-postadress" required>
+                            <input type="text" name="subject" placeholder="Ämne" required>
+                            <textarea rows="8" name="message" placeholder="Meddelande" required></textarea>
+                            <button type="submit" class="hero-btn red-btn">Send Message</button>
+                        </form>
+                    </div>
+
+                    <div class="contact-col-info">
+                        <div>
+                            <i class="fa fa-home"></i>
+                            <span>
+                                <h5>Drottninggatan 1</h5>
+                                <p>Örebro, SWE</p>
+                            </span>
+                        </div>
+                        <div>
+                            <i class="fa fa-phone"></i>
+                            <span
+                                <h5>+46 763589211</h5>
+                                <p>Måndag - Söndag 10.00 - 18.00</p>
+                            </span>
+                        </div>
+                        <div>
+                            <i class="fa fa-envelope-o"></i>
+                            <span>
+                                <h5>info@pinkfood.com</h5>
+                                <p>Maila oss gärna!</p>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </section>
